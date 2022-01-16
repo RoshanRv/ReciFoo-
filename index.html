@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="icon" href="icon.png">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>ReciFoo!!</title>
+</head>
+<body class="relative h-full bg-black text-white">
+    <!--                          Nav                    -->
+    <header class="mx-auto ">
+        <nav class="flex justify-between p-4  items-center w-auto max-w-screen-lg mx-auto relative bg-indigo-500 border-b-2 border-white">
+            <div class="flex items-center cursor-pointer" onclick="reload()">
+                <img src="icon.png" alt="" class=" md:w-16 h-14 pr-2 hidden md:block">
+                <h1 class="text-xl md:text-2xl cursor-pointer" > ReciFoo!!</h1>
+            </div>
+            <div class="flex items-center w-auto relative">
+                <input type='search' id="search" placeholder="Eg: Pizza" class="p-1 md:p-2 w-32 md:w-48 rounded-xl bg-black border-2 " >
+                <button class=" " id="searchBtn"><i class="fas fa-search ml-1 border-2  p-2 text-black hover:bg-indigo-600 rounded-lg"></i></button>
+            </div>
+        </nav>
+    </header>
+    <!--                            Main                 -->
+    <main class="max-w-screen-lg mx-auto">
+<!--                                Fav                      -->
+        <section class="pt-4 bg-indigo-500 border-b-2 border-white">
+            <h1 class="text-center text-2xl md:text-3xl">Your Favourites</h1>
+            <div id='fav' class="flex flex-no-wrap mt-4 overflow-auto md:space-x-10 text-center items-center px-2">
+                
+                
+            </div>
+        </section>
+<!--                            Items                        -->
+        <section class=" mt-4 w-auto border-b-2 pb-4 ">
+            <h1 id='head' class="text-center text-2xl md:text-3xl">Foods</h1>
+            <div id="items" class="  mt-2 px-6">
+                <div id='item' class="w-max md:grid md:gap-x-12 mx-auto">
+                </div>  
+            </div>
+        </section>
+
+<!--                            Region                   -->
+        <section id="region" class=" mt-4 p-4 pb-8 border-b-2">
+            <h1 class="text-center text-2xl md:text-3xl">Browse Foods by Country</h1>
+            <div class="grid md:gap-4 gap-2   gr-16 mt-6 bg-indigo-500 border-2 p-2 rounded-lg hover:bg-indigo-600 transition-all">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/gb.png" id='flag' data='British' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/us.png" id='flag' data='American' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/fr.png" id='flag' data='French' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/ca.png" id='flag' data='Canadian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/jm.png" id='flag' data='Jamaican' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/cn.png" id='flag' data='Chinese' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/nl.png" id='flag' data='Dutch' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/eg.png" id='flag' data='Egyptian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/gr.png" id='flag' data='Greek' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/in.png" id='flag' data='Indian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/ie.png" id='flag' data='Irish' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/it.png" id='flag' data='Italian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/jp.png" id='flag' data='Japanese' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/kn.png" id='flag' data='Kenyan' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/my.png" id='flag' data='Malaysian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/mx.png" id='flag' data='Mexican' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/ma.png" id='flag' data='Moroccan' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/hr.png" id='flag' data='Croatian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/pt.png" id='flag' data='Portuguese' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/ru.png" id='flag' data='Russian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/es.png" id='flag' data='Spanish' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/th.png" id='flag' data='Thai' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/vn.png" id='flag' data='Vietnamese' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/tr.png" id='flag' data='Turkish' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/tn.png" id='flag' data='Tunisian' class='cursor-pointer scale-f transition-all' alt="">
+                <img src="https://www.themealdb.com/images/icons/flags/big/64/pl.png" id='flag' data='Polish' class='cursor-pointer scale-f transition-all' alt="">
+            </div>
+        </section>
+
+<!--                               Alphabet                       -->
+        <section class=" mt-4 mb-2 w-auto border-b-2 pb-8">
+            <h1 class="text-center text-2xl md:text-3xl">Browse Foods by Alphabet</h1>
+            <div class="grid gr-alpha mt-6 mx-4 p-2 rounded-lg text-center bg-indigo-500 border-2 hover:bg-indigo-600 transition-all">
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min lg:pl-2" id="alpha">A</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">B</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">C</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">D</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">E</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">F</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">G</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">H</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">I</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">J</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">K</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">L</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">M</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">N</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">O</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">P</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">Q</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">R</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">S</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">T</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">U</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">V</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">W</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">X</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">Y</p>
+                <p class="text-xl scale-a transition-all md:text-2xl cursor-pointer w-min" id="alpha">Z</p>
+            </div>
+        </section>
+
+<!--                            Category                        -->
+        <section class=" my-6 w-auto">
+            <h1  class="text-center text-2xl md:text-3xl">Categories</h1>
+            <div id="cat" class="grid grid-cols-2 md:grid-cols-4 mt-4 place-items-center px-4">
+
+            </div>
+        </section>
+
+<!--                            Recipe                   -->
+        <section id='recipeInfo' class="h-max mx-auto fixed bg top-0 hidden z-50 ">
+            <div id='reci' class="max-w-screen-lg max-h-full overflow-scroll z-50 mx-auto p-4 h-max">
+            
+            </div>
+        </section>
+
+
+
+    </main>
+    <!--                    Footer               -->
+    <footer class="max-w-screen-lg mx-auto bg-indigo-500 mt-8 border-t-2 w-full">
+        <section class=" p-2">
+            <div class="md:flex text-center justify-around">
+                <p>Made with &nbsp; &#x1f9e0; &nbsp;& &#10084; &nbsp;  By Roshan Kumar</p>
+                <p> Reach Me On &nbsp; <a href="https://twitter.com/RoshanK18328680" target="_blank"><i class="fab fa-twitter-square scale-f transition-all bg-white fa-lg  text-blue-500"></i></a>
+                                &nbsp; <a href="https://www.linkedin.com/in/roshan-kumar-5a5020220/" target="_blank"><i class="fab fa-linkedin fa-lg scale-f transition-all text-blue-600 bg-white"></i></a>
+                                &nbsp; <a href="https://github.com/RoshanRv" target="_blank"><i class="fab fa-github-square fa-lg text-black scale-f transition-all  bg-white"></i></a></p>
+            </div>
+        </section>
+    </footer>
+    
+</body>
+</html>
