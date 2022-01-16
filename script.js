@@ -109,7 +109,7 @@ const displayMeals=(mealData,random=false,fav=false,region=undefined,alphabet=un
     region && (head.innerHTML=`${region} Foods`)
     alphabet && (head.innerHTML=`Foods Starts with '${alphabet}' `)
     category && (head.innerHTML=`${category} Dishes `)
-    mealContainer.innerHTML =`${random ? '<span class="absolute text-lg bg-black border-2  border-white px-4 py-1 pl-6  top-6">Random Pick</span>': ''}
+    mealContainer.innerHTML =`${random ? '<span class="absolute text-lg bg-black border-2  border-white px-4 py-1 pl-6  top-6">Recommendation</span>': ''}
                         <div class='overflow-hidden border-2 border-white rounded-lg'>
                         <img id='recipe' data=${mealData.idMeal} src=${mealData.strMealThumb} alt=${mealData.strMeal} class="w-60 scale transition-all md:w-76 lg:w-96 cursor-pointer ">
                         </div>
@@ -317,6 +317,9 @@ fetchCategory()
 
 // Event Listerners
 searchBtn.addEventListener('click',fetchSearchMeals)
+search.addEventListener('keypress',(e)=>{
+    if(e.key=='Enter')fetchSearchMeals()
+})
 document.addEventListener('click',(e)=>{
     if(e.target && e.target.id =='favBtn'){
         let mealId = e.target.attributes[2].value
